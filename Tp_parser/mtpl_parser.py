@@ -504,7 +504,7 @@ class MtplParser:
             self.log.info("No Analog related is processed")
             return
         # for namelist in dc_rule_list:
-        configHeader = "TOKEN_NAME,MODULE,IP,EDC_KILL,SUBFLOW,VOLTAGE_CORNER,TYPE,DELIMITER,DATA_TYPE"
+        configHeader = "TOKEN_NAME,MODULE,IP,EDC_KILL,SUBFLOW,VOLTAGE_CORNER,TYPE"
         rule_file_path = "%s\\rule_dc_%s.csv"
         i = 0
         while os.path.exists(rule_file_path%(output,i)):
@@ -520,10 +520,10 @@ class MtplParser:
                 name_split[7] = "(.*?)"
                 tokenName = "_".join(name_split)
                 tokenName = "%s::%s"%(self.module_name,tokenName)
-                stringToReturn = "%s,%s,%s,%s,%s,%s,PIN_VALUE,_,CUSTOM"%(tokenName,self.module_name,self.module_name.split("_")[0],"$1","$2","$3")
+                stringToReturn = "%s,%s,%s,%s,%s,%s,PIN_VALUE"%(tokenName,self.module_name,self.module_name.split("_")[0],"$1","$2","$3")
             else:
                 tokenName = "%s::%s"%(self.module_name,tname)
-                stringToReturn = "%s,%s,%s,%s,%s,%s,PIN_VALUE,_,CUSTOM"%(tokenName,self.module_name,self.module_name.split("_")[0],"NA","NA","NA")
+                stringToReturn = "%s,%s,%s,%s,%s,%s,PIN_VALUE"%(tokenName,self.module_name,self.module_name.split("_")[0],"NA","NA","NA")
             if stringToReturn in temp_list:
                 pass
             else:
