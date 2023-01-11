@@ -416,7 +416,7 @@ class MtplParser:
                                                         else:
                                                             dc_rule_list.append(tname_key)
             if 'iCDCLeakageTest' in template:
-                config_file = param_hash['config_file']
+                config_file = param_hash['input_file']
                 config_set = param_hash['config_set']
                 if os.path.isfile(config_file) and config_file.endswith('.xml'):
                     print(config_file)
