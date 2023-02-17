@@ -1,0 +1,31 @@
+2023-02-17 15:20:30 - INFO - -------------------------------------
+2023-02-17 15:20:30 - INFO -            Starting PrePar           
+2023-02-17 15:20:30 - INFO - -------------------------------------
+2023-02-17 15:20:30 - INFO -   Version      : 1.3.0
+2023-02-17 15:20:30 - INFO -   Product      : HVM
+2023-02-17 15:20:30 - INFO -   Interface    : GENERIC
+2023-02-17 15:20:30 - INFO -   Input        : C:\Users\anandare\source\repos\data-automations\data-automations\WLW_DDR\CLEAN_Unit208_SINGLEINIT.txt
+2023-02-17 15:20:30 - INFO -   Output Folder: C:\Users\anandare\source\repos\data-automations\data-automations\WLW_DDR
+2023-02-17 15:20:30 - INFO - 
+2023-02-17 15:20:30 - INFO - Parsing the ITUFF file in a aqua like csv
+2023-02-17 15:20:30 - ERROR - PrePar has failed:
+Traceback (most recent call last):
+  File "c:\users\anandare\appdata\local\programs\python\python38\lib\site-packages\pysvtools\prepar_data\run_prepar_data.py", line 652, in main
+    _process_data(args, logger)
+  File "c:\users\anandare\appdata\local\programs\python\python38\lib\site-packages\pysvtools\prepar_data\run_prepar_data.py", line 493, in _process_data
+    df, file_name = _get_data_from_ituff(args, logger)
+  File "c:\users\anandare\appdata\local\programs\python\python38\lib\site-packages\pysvtools\prepar_data\run_prepar_data.py", line 451, in _get_data_from_ituff
+    df = parser.parse(args.ituff_pattern)
+  File "c:\users\anandare\appdata\local\programs\python\python38\lib\site-packages\pysvtools\prepar_data\utils\CUtItuffParser.py", line 212, in parse
+    return self.to_final_dataframe(repeated_values, metadata, data)
+  File "c:\users\anandare\appdata\local\programs\python\python38\lib\site-packages\pysvtools\prepar_data\utils\CUtItuffParser.py", line 86, in to_final_dataframe
+    df = pd.merge(metadata_df, data_df, on="Summary")
+  File "c:\users\anandare\appdata\local\programs\python\python38\lib\site-packages\pandas\core\reshape\merge.py", line 110, in merge
+    op = _MergeOperation(
+  File "c:\users\anandare\appdata\local\programs\python\python38\lib\site-packages\pandas\core\reshape\merge.py", line 703, in __init__
+    ) = self._get_merge_keys()
+  File "c:\users\anandare\appdata\local\programs\python\python38\lib\site-packages\pandas\core\reshape\merge.py", line 1179, in _get_merge_keys
+    left_keys.append(left._get_label_or_level_values(lk))
+  File "c:\users\anandare\appdata\local\programs\python\python38\lib\site-packages\pandas\core\generic.py", line 1850, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'Summary'
