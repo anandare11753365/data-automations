@@ -1,31 +1,1468 @@
-2023-02-17 15:20:30 - INFO - -------------------------------------
-2023-02-17 15:20:30 - INFO -            Starting PrePar           
-2023-02-17 15:20:30 - INFO - -------------------------------------
-2023-02-17 15:20:30 - INFO -   Version      : 1.3.0
-2023-02-17 15:20:30 - INFO -   Product      : HVM
-2023-02-17 15:20:30 - INFO -   Interface    : GENERIC
-2023-02-17 15:20:30 - INFO -   Input        : C:\Users\anandare\source\repos\data-automations\data-automations\WLW_DDR\CLEAN_Unit208_SINGLEINIT.txt
-2023-02-17 15:20:30 - INFO -   Output Folder: C:\Users\anandare\source\repos\data-automations\data-automations\WLW_DDR
-2023-02-17 15:20:30 - INFO - 
-2023-02-17 15:20:30 - INFO - Parsing the ITUFF file in a aqua like csv
-2023-02-17 15:20:30 - ERROR - PrePar has failed:
-Traceback (most recent call last):
-  File "c:\users\anandare\appdata\local\programs\python\python38\lib\site-packages\pysvtools\prepar_data\run_prepar_data.py", line 652, in main
-    _process_data(args, logger)
-  File "c:\users\anandare\appdata\local\programs\python\python38\lib\site-packages\pysvtools\prepar_data\run_prepar_data.py", line 493, in _process_data
-    df, file_name = _get_data_from_ituff(args, logger)
-  File "c:\users\anandare\appdata\local\programs\python\python38\lib\site-packages\pysvtools\prepar_data\run_prepar_data.py", line 451, in _get_data_from_ituff
-    df = parser.parse(args.ituff_pattern)
-  File "c:\users\anandare\appdata\local\programs\python\python38\lib\site-packages\pysvtools\prepar_data\utils\CUtItuffParser.py", line 212, in parse
-    return self.to_final_dataframe(repeated_values, metadata, data)
-  File "c:\users\anandare\appdata\local\programs\python\python38\lib\site-packages\pysvtools\prepar_data\utils\CUtItuffParser.py", line 86, in to_final_dataframe
-    df = pd.merge(metadata_df, data_df, on="Summary")
-  File "c:\users\anandare\appdata\local\programs\python\python38\lib\site-packages\pandas\core\reshape\merge.py", line 110, in merge
-    op = _MergeOperation(
-  File "c:\users\anandare\appdata\local\programs\python\python38\lib\site-packages\pandas\core\reshape\merge.py", line 703, in __init__
-    ) = self._get_merge_keys()
-  File "c:\users\anandare\appdata\local\programs\python\python38\lib\site-packages\pandas\core\reshape\merge.py", line 1179, in _get_merge_keys
-    left_keys.append(left._get_label_or_level_values(lk))
-  File "c:\users\anandare\appdata\local\programs\python\python38\lib\site-packages\pandas\core\generic.py", line 1850, in _get_label_or_level_values
-    raise KeyError(key)
-KeyError: 'Summary'
+2023-02-20 13:45:23 - INFO - -------------------------------------
+2023-02-20 13:45:23 - INFO -            Starting PrePar           
+2023-02-20 13:45:23 - INFO - -------------------------------------
+2023-02-20 13:45:23 - INFO -   Version      : 1.3.0
+2023-02-20 13:45:23 - INFO -   Product      : HVM
+2023-02-20 13:45:23 - INFO -   Interface    : GENERIC
+2023-02-20 13:45:23 - INFO -   Input        : C:\Users\anandare\source\repos\data-automations\data-automations\WLW_DDR\CLEAN_Unit208_SINGLEINIT.txt
+2023-02-20 13:45:23 - INFO -   Output Folder: C:\Users\anandare\source\repos\data-automations\data-automations\WLW_DDR
+2023-02-20 13:45:23 - INFO - 
+2023-02-20 13:45:23 - INFO - Parsing the ITUFF file in a aqua like csv
+2023-02-20 13:45:23 - INFO - Saving the aqua like csv as PPV_HVM_GENERIC_from_ituff_CLEAN_Unit208_SINGLEINIT.txt.csv
+2023-02-20 13:45:23 - INFO - Fixing any discrepancy caused by AquaV4 migration
+2023-02-20 13:45:23 - INFO - Renaming columns to match the Aqua V3 output
+2023-02-20 13:45:31 - INFO -     Generating required columns if they are not in the dataset
+2023-02-20 13:45:31 - INFO -     Splitting the data by Params, Data
+2023-02-20 13:45:31 - INFO - Getting the 'Params' from the dataset
+2023-02-20 13:45:31 - INFO -   Working with the Params df
+2023-02-20 13:45:31 - INFO -     Adding columns that are missing but required
+2023-02-20 13:45:31 - INFO -     Doing a pivot for the Test_Name Column with Test_Result
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_PMA_MCMISCSSAUG_CR_PMASTATUS_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_MCMISCSSAUG_CR_PHYPMSTATUS_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_MISCS_CR_PM_STATUS_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA4CH0_READ_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA4CH1_READ_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA5CH0_READ_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA5CH1_READ_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA6CH0_READ_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_MDLLCTL0_CH4CCC_READ_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_MDLLCTL0_CH5CCC_READ_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCLKCOMP_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_MISCCOMPCODES_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DLLCOMP_VCDLCTRL_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DLLCOMP_DLLCTRL_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DCCCTL4_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DLLCOMP_LDOCTRL0_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_COMPDLLWL_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCMDCOMP_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRDATACOMP0_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCTLCOMP_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCOMPCTL0_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCOMPCTL3_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_PNCCOMP_CTRL0_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_PNCCOMP_CTRL1_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_RCOMP_EXTCOMP_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_RCOMP_RELCOMP_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_RCOMPCTRL_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_SCOMPCTL_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:31 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_TXCONTROL_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:31 - INFO -       Generating Cols from Token
+2023-02-20 13:45:31 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_VSSHICOMP_CTRL0_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DLLCOMP_SWCAPCTRL_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRDATACOMP1_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_VCCDLLCOMPDATACCC_0_0_0_MCHBAR_ALL_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_CLKALIGNSTATUS_CH4CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_CLKALIGNSTATUS_CH5CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL6_CH4CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL6_CH5CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL7_CH4CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL7_CH5CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL8_CH4CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL8_CH5CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_TXPBDOFFSET_CH4CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_TXPBDOFFSET_CH5CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL9_CH4CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL9_CH5CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL11_CH4CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL11_CH5CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL20_CH4CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL20_CH5CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_COMP2_CH4CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_COMP2_CH5CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DDRCRCCCVOLTAGEUSED_CH4CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DDRCRCCCVOLTAGEUSED_CH5CCC_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_AFEMISC_DATA4CH0_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_AFEMISC_DATA4CH1_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_AFEMISC_DATA5CH0_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_AFEMISC_DATA5CH1_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_AFEMISC_DATA6CH0_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL0_DATA4CH0_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:32 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:32 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL0_DATA4CH1_CH0_1
+2023-02-20 13:45:32 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL0_DATA5CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL0_DATA5CH1_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL0_DATA6CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DDRCRCMDBUSTRAIN_0_0_0_MCHBAR_DATA4CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DDRCRCMDBUSTRAIN_0_0_0_MCHBAR_DATA4CH1_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DDRCRCMDBUSTRAIN_0_0_0_MCHBAR_DATA5CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DDRCRCMDBUSTRAIN_0_0_0_MCHBAR_DATA5CH1_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DDRCRCMDBUSTRAIN_0_0_0_MCHBAR_DATA6CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQSTXRXCTL_DATA4CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQSTXRXCTL_DATA4CH1_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQSTXRXCTL_DATA5CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQSTXRXCTL_DATA5CH1_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQSTXRXCTL_DATA6CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQTXCTL0_DATA4CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQTXCTL0_DATA4CH1_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQTXCTL0_DATA5CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQTXCTL0_DATA5CH1_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQTXCTL0_DATA6CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL5_DATA4CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL5_DATA4CH1_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL5_DATA5CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL5_DATA5CH1_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL5_DATA6CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL6_DATA4CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL6_DATA4CH1_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL6_DATA5CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL6_DATA5CH1_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL6_DATA6CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL7_DATA4CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL7_DATA4CH1_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:33 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL7_DATA5CH0_CH0_1
+2023-02-20 13:45:33 - INFO -       Generating Cols from Token
+2023-02-20 13:45:33 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL7_DATA5CH1_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL7_DATA6CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL8_DATA4CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL8_DATA4CH1_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL8_DATA5CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL8_DATA5CH1_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL8_DATA6CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL9_DATA4CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL9_DATA4CH1_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL9_DATA5CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL9_DATA5CH1_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL9_DATA6CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA4CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA4CH1_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA5CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA5CH1_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA6CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL2_DATA4CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL2_DATA4CH1_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL2_DATA5CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL2_DATA5CH1_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL2_DATA6CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL3_DATA4CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL3_DATA4CH1_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL3_DATA5CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL3_DATA5CH1_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL3_DATA6CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_CLKALIGNSTATUS_DATA4CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_CLKALIGNSTATUS_DATA4CH1_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_CLKALIGNSTATUS_DATA5CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_CLKALIGNSTATUS_DATA5CH1_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_CLKALIGNSTATUS_DATA6CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET0_DATA4CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET0_DATA4CH1_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:34 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:34 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET0_DATA5CH0_CH0_1
+2023-02-20 13:45:34 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET0_DATA5CH1_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET0_DATA6CH0_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET1_DATA4CH0_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET1_DATA4CH1_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET1_DATA5CH0_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET1_DATA5CH1_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET1_DATA6CH0_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRIOLVR_CR_AFE_CTRL1_NEW_ALL_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL1_DATA4CH0_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL1_DATA4CH1_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL1_DATA5CH0_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL1_DATA5CH1_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL1_DATA6CH0_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL2_DATA4CH0_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL2_DATA4CH1_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL2_DATA5CH0_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL2_DATA5CH1_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL2_DATA6CH0_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL0_DATA4CH0_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL0_DATA4CH1_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL0_DATA5CH0_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL0_DATA5CH1_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL0_DATA6CH0_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL1_DATA4CH0_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL1_DATA4CH1_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL1_DATA5CH0_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:35 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:35 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL1_DATA5CH1_CH0_1
+2023-02-20 13:45:35 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL1_DATA6CH0_CH0_1
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCLKCOMP_0_0_0_MCHBAR_CH4CCC_CH0_1
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCLKCOMP_0_0_0_MCHBAR_CH5CCC_CH0_1
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCMDCOMP_0_0_0_MCHBAR_CH4CCC_CH0_1
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCMDCOMP_0_0_0_MCHBAR_CH5CCC_CH0_1
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCTLCOMP_0_0_0_MCHBAR_CH4CCC_CH0_1
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCTLCOMP_0_0_0_MCHBAR_CH5CCC_CH0_1
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_PMA_MCMISCSSAUG_CR_PMASTATUS_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_MCMISCSSAUG_CR_PHYPMSTATUS_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_MISCS_CR_PM_STATUS_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA4CH0_READ_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA4CH1_READ_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA5CH0_READ_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA5CH1_READ_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA6CH0_READ_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_MDLLCTL0_CH4CCC_READ_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_MDLLCTL0_CH5CCC_READ_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCLKCOMP_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_MISCCOMPCODES_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DLLCOMP_VCDLCTRL_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DLLCOMP_DLLCTRL_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DCCCTL4_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DLLCOMP_LDOCTRL0_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_COMPDLLWL_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCMDCOMP_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRDATACOMP0_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCTLCOMP_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCOMPCTL0_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCOMPCTL3_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_PNCCOMP_CTRL0_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_PNCCOMP_CTRL1_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_RCOMP_EXTCOMP_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_RCOMP_RELCOMP_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_RCOMPCTRL_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_SCOMPCTL_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_TXCONTROL_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_VSSHICOMP_CTRL0_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:36 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:36 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DLLCOMP_SWCAPCTRL_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:36 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRDATACOMP1_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_VCCDLLCOMPDATACCC_0_0_0_MCHBAR_ALL_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_CLKALIGNSTATUS_CH4CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_CLKALIGNSTATUS_CH5CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL6_CH4CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL6_CH5CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL7_CH4CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL7_CH5CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL8_CH4CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL8_CH5CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_TXPBDOFFSET_CH4CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_TXPBDOFFSET_CH5CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL9_CH4CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL9_CH5CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL11_CH4CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL11_CH5CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL20_CH4CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL20_CH5CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_COMP2_CH4CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_COMP2_CH5CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DDRCRCCCVOLTAGEUSED_CH4CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DDRCRCCCVOLTAGEUSED_CH5CCC_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_AFEMISC_DATA4CH0_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_AFEMISC_DATA4CH1_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_AFEMISC_DATA5CH0_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_AFEMISC_DATA5CH1_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_AFEMISC_DATA6CH0_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL0_DATA4CH0_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL0_DATA4CH1_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL0_DATA5CH0_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL0_DATA5CH1_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL0_DATA6CH0_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DDRCRCMDBUSTRAIN_0_0_0_MCHBAR_DATA4CH0_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DDRCRCMDBUSTRAIN_0_0_0_MCHBAR_DATA4CH1_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DDRCRCMDBUSTRAIN_0_0_0_MCHBAR_DATA5CH0_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DDRCRCMDBUSTRAIN_0_0_0_MCHBAR_DATA5CH1_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DDRCRCMDBUSTRAIN_0_0_0_MCHBAR_DATA6CH0_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQSTXRXCTL_DATA4CH0_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQSTXRXCTL_DATA4CH1_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:37 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQSTXRXCTL_DATA5CH0_CH0_2
+2023-02-20 13:45:37 - INFO -       Generating Cols from Token
+2023-02-20 13:45:37 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQSTXRXCTL_DATA5CH1_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQSTXRXCTL_DATA6CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQTXCTL0_DATA4CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQTXCTL0_DATA4CH1_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQTXCTL0_DATA5CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQTXCTL0_DATA5CH1_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQTXCTL0_DATA6CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL5_DATA4CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL5_DATA4CH1_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL5_DATA5CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL5_DATA5CH1_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL5_DATA6CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL6_DATA4CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL6_DATA4CH1_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL6_DATA5CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL6_DATA5CH1_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL6_DATA6CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL7_DATA4CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL7_DATA4CH1_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL7_DATA5CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL7_DATA5CH1_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL7_DATA6CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL8_DATA4CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL8_DATA4CH1_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL8_DATA5CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL8_DATA5CH1_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL8_DATA6CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL9_DATA4CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL9_DATA4CH1_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL9_DATA5CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL9_DATA5CH1_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL9_DATA6CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA4CH0_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:38 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA4CH1_CH0_2
+2023-02-20 13:45:38 - INFO -       Generating Cols from Token
+2023-02-20 13:45:38 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA5CH0_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA5CH1_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA6CH0_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL2_DATA4CH0_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL2_DATA4CH1_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL2_DATA5CH0_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL2_DATA5CH1_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL2_DATA6CH0_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL3_DATA4CH0_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL3_DATA4CH1_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL3_DATA5CH0_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL3_DATA5CH1_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL3_DATA6CH0_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_CLKALIGNSTATUS_DATA4CH0_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_CLKALIGNSTATUS_DATA4CH1_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_CLKALIGNSTATUS_DATA5CH0_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_CLKALIGNSTATUS_DATA5CH1_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_CLKALIGNSTATUS_DATA6CH0_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET0_DATA4CH0_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET0_DATA4CH1_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET0_DATA5CH0_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET0_DATA5CH1_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET0_DATA6CH0_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET1_DATA4CH0_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET1_DATA4CH1_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET1_DATA5CH0_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET1_DATA5CH1_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:39 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET1_DATA6CH0_CH0_2
+2023-02-20 13:45:39 - INFO -       Generating Cols from Token
+2023-02-20 13:45:39 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRIOLVR_CR_AFE_CTRL1_NEW_ALL_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL1_DATA4CH0_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL1_DATA4CH1_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL1_DATA5CH0_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL1_DATA5CH1_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL1_DATA6CH0_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL2_DATA4CH0_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL2_DATA4CH1_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL2_DATA5CH0_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL2_DATA5CH1_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL2_DATA6CH0_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL0_DATA4CH0_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL0_DATA4CH1_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL0_DATA5CH0_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL0_DATA5CH1_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL0_DATA6CH0_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL1_DATA4CH0_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL1_DATA4CH1_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL1_DATA5CH0_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL1_DATA5CH1_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL1_DATA6CH0_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCLKCOMP_0_0_0_MCHBAR_CH4CCC_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCLKCOMP_0_0_0_MCHBAR_CH5CCC_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCMDCOMP_0_0_0_MCHBAR_CH4CCC_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCMDCOMP_0_0_0_MCHBAR_CH5CCC_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCTLCOMP_0_0_0_MCHBAR_CH4CCC_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:40 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:40 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCTLCOMP_0_0_0_MCHBAR_CH5CCC_CH0_2
+2023-02-20 13:45:40 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_PMA_MCMISCSSAUG_CR_PMASTATUS_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_MCMISCSSAUG_CR_PHYPMSTATUS_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_MISCS_CR_PM_STATUS_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA4CH0_READ_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA4CH1_READ_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA5CH0_READ_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA5CH1_READ_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA6CH0_READ_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_MDLLCTL0_CH4CCC_READ_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_MDLLCTL0_CH5CCC_READ_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCLKCOMP_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_MISCCOMPCODES_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DLLCOMP_VCDLCTRL_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DLLCOMP_DLLCTRL_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DCCCTL4_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DLLCOMP_LDOCTRL0_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_COMPDLLWL_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCMDCOMP_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRDATACOMP0_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCTLCOMP_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCOMPCTL0_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCOMPCTL3_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_PNCCOMP_CTRL0_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_PNCCOMP_CTRL1_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_RCOMP_EXTCOMP_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_RCOMP_RELCOMP_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_RCOMPCTRL_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_SCOMPCTL_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_TXCONTROL_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_VSSHICOMP_CTRL0_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DLLCOMP_SWCAPCTRL_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:41 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRDATACOMP1_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:41 - INFO -       Generating Cols from Token
+2023-02-20 13:45:41 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_VCCDLLCOMPDATACCC_0_0_0_MCHBAR_ALL_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_CLKALIGNSTATUS_CH4CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_CLKALIGNSTATUS_CH5CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL6_CH4CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL6_CH5CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL7_CH4CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL7_CH5CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL8_CH4CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL8_CH5CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_TXPBDOFFSET_CH4CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_TXPBDOFFSET_CH5CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL9_CH4CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL9_CH5CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL11_CH4CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL11_CH5CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL20_CH4CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DCCCTL20_CH5CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_COMP2_CH4CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_COMP2_CH5CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DDRCRCCCVOLTAGEUSED_CH4CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCCC_CR_DDRCRCCCVOLTAGEUSED_CH5CCC_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_AFEMISC_DATA4CH0_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_AFEMISC_DATA4CH1_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_AFEMISC_DATA5CH0_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_AFEMISC_DATA5CH1_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_AFEMISC_DATA6CH0_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL0_DATA4CH0_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL0_DATA4CH1_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL0_DATA5CH0_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL0_DATA5CH1_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL0_DATA6CH0_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DDRCRCMDBUSTRAIN_0_0_0_MCHBAR_DATA4CH0_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DDRCRCMDBUSTRAIN_0_0_0_MCHBAR_DATA4CH1_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DDRCRCMDBUSTRAIN_0_0_0_MCHBAR_DATA5CH0_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DDRCRCMDBUSTRAIN_0_0_0_MCHBAR_DATA5CH1_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DDRCRCMDBUSTRAIN_0_0_0_MCHBAR_DATA6CH0_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQSTXRXCTL_DATA4CH0_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:42 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQSTXRXCTL_DATA4CH1_CH0_3
+2023-02-20 13:45:42 - INFO -       Generating Cols from Token
+2023-02-20 13:45:42 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQSTXRXCTL_DATA5CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQSTXRXCTL_DATA5CH1_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQSTXRXCTL_DATA6CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQTXCTL0_DATA4CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQTXCTL0_DATA4CH1_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQTXCTL0_DATA5CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQTXCTL0_DATA5CH1_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DQTXCTL0_DATA6CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL5_DATA4CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL5_DATA4CH1_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL5_DATA5CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL5_DATA5CH1_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL5_DATA6CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL6_DATA4CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL6_DATA4CH1_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL6_DATA5CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL6_DATA5CH1_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL6_DATA6CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL7_DATA4CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL7_DATA4CH1_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL7_DATA5CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL7_DATA5CH1_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL7_DATA6CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL8_DATA4CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL8_DATA4CH1_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL8_DATA5CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL8_DATA5CH1_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL8_DATA6CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL9_DATA4CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL9_DATA4CH1_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL9_DATA5CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL9_DATA5CH1_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_DCCCTL9_DATA6CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA4CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA4CH1_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:43 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA5CH0_CH0_3
+2023-02-20 13:45:43 - INFO -       Generating Cols from Token
+2023-02-20 13:45:43 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA5CH1_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL0_DATA6CH0_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL2_DATA4CH0_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL2_DATA4CH1_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL2_DATA5CH0_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL2_DATA5CH1_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL2_DATA6CH0_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL3_DATA4CH0_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL3_DATA4CH1_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL3_DATA5CH0_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL3_DATA5CH1_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_MDLLCTL3_DATA6CH0_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_CLKALIGNSTATUS_DATA4CH0_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_CLKALIGNSTATUS_DATA4CH1_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_CLKALIGNSTATUS_DATA5CH0_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_CLKALIGNSTATUS_DATA5CH1_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_CLKALIGNSTATUS_DATA6CH0_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET0_DATA4CH0_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET0_DATA4CH1_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET0_DATA5CH0_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET0_DATA5CH1_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET0_DATA6CH0_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET1_DATA4CH0_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET1_DATA4CH1_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET1_DATA5CH0_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET1_DATA5CH1_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:44 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_TXPBDOFFSET1_DATA6CH0_CH0_3
+2023-02-20 13:45:44 - INFO -       Generating Cols from Token
+2023-02-20 13:45:44 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRIOLVR_CR_AFE_CTRL1_NEW_ALL_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL1_DATA4CH0_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL1_DATA4CH1_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL1_DATA5CH0_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL1_DATA5CH1_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL1_DATA6CH0_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL2_DATA4CH0_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL2_DATA4CH1_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL2_DATA5CH0_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL2_DATA5CH1_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_COMPCTL2_DATA6CH0_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL0_DATA4CH0_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL0_DATA4CH1_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL0_DATA5CH0_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL0_DATA5CH1_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL0_DATA6CH0_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL1_DATA4CH0_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL1_DATA4CH1_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL1_DATA5CH0_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL1_DATA5CH1_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRDATA_CR_SDLCTL1_DATA6CH0_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCLKCOMP_0_0_0_MCHBAR_CH4CCC_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCLKCOMP_0_0_0_MCHBAR_CH5CCC_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCMDCOMP_0_0_0_MCHBAR_CH4CCC_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCMDCOMP_0_0_0_MCHBAR_CH5CCC_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCTLCOMP_0_0_0_MCHBAR_CH4CCC_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:45 - INFO -    Checking Rule: MIO_DDR::PHY_DDR5_CMEMDECODE_K_ENDFC_X_X_VNOM_X_REGDUMP_DDRCOMP_CR_DDRCRCTLCOMP_0_0_0_MCHBAR_CH5CCC_CH0_3
+2023-02-20 13:45:45 - INFO -       Generating Cols from Token
+2023-02-20 13:45:45 - INFO -       Generating Cols from TestResults
+2023-02-20 13:45:48 - INFO - concatenating df_params
+2023-02-20 13:45:48 - INFO -   Ordering Columns
+2023-02-20 13:45:49 - INFO -   Splitting Column: DevRevStep
+2023-02-20 13:45:49 - INFO -   Decoding Column: Product Specific Details ID
+2023-02-20 13:45:49 - INFO -  
+2023-02-20 13:45:49 - INFO - Number of different Parts after the post processing: 1
+2023-02-20 13:45:50 - INFO - -----------------------------------------------
+2023-02-20 13:45:50 - INFO -           PrePar has ran successfully!         
+2023-02-20 13:45:50 - INFO - -----------------------------------------------
