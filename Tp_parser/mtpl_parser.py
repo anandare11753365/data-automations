@@ -1126,11 +1126,13 @@ class MtplParser:
         return to_-from_+1
 if __name__ == "__main__":
     modulePath = "C:/Users/anandare/source/repos/applications.manufacturing.ate-test.torch.networking.wlw.class.wlw/Modules"
-    # mp = MtplParser(modulePath,'SIO_SERDES')
+    mp = MtplParser(modulePath,'SIO_SERDES')
+    mp.rule_file_gen(output_path="C:/temp/rule_file")
+    
     # mp.cmem_to_ctvdecoder()
-    mp = MtplParser()
+    # mp = MtplParser()
     # mp.cmem_to_ctvdecoder(mtpl_path="C:/Users/anandare/source/repos/applications.manufacturing.ate-test.torch.networking.wlw.class.wlw/Modules/SIO_SERDES/InputFiles/wlw_serdes_extlb_ro.xml")
     # mp.cmem_to_ctvdecoder(mtpl_path="C:/Users/anandare/Downloads/DDR_MM_CCC_2400.xml")
-    mp.cmem_to_ctvdecoder(mtpl_path="C:/Users/anandare/Downloads/wlw_serdes_extlb_ro_0x071c0239.xml")
-    print("Done")
+    # mp.cmem_to_ctvdecoder(mtpl_path="C:/Users/anandare/Downloads/wlw_serdes_extlb_ro_0x071c0239.xml")
+    # print("Done")
   
