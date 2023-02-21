@@ -81,11 +81,24 @@ class MtplParser:
     def test_parser(self, mtpl_str: str):
         result = re.findall('Test\s.*?\{.*?\}',mtpl_str,re.DOTALL)
         test_dict ={}
+        # print(mtpl_str)
+        # print(result)
         for raw_test in result:
-            raw_test_list = raw_test.split('\n')
-            raw_test_list.remove('{')
-            raw_test_list.remove('}')
-            test_name = raw_test_list[0].split(" ")[2]
+            # if "MultiTrialTest" in raw_test:
+                # print("$$$$$$$$$$$$$$$$$$$")
+                # continue
+            raw_test =raw_test.replace("\n","")
+            raw_test =raw_test.replace("{",";")
+            raw_test =raw_test.replace("}",";")
+            raw_test_list = raw_test.split(';')
+
+            # print(raw_test_list)
+            # raw_test_list.remove('{')
+            # raw_test_list.remove('}')
+            raw_test_list_split = raw_test_list[0].split(" ")
+            if len(raw_test_list_split) < 3:
+                continue
+            test_name = raw_test_list_split[2]
             
             test_template = raw_test_list[0].split(" ")[1]
             test_params_values = raw_test_list[1:]
@@ -1125,9 +1138,9 @@ class MtplParser:
     def size(self,from_,to_):
         return to_-from_+1
 if __name__ == "__main__":
-    modulePath = "C:/Users/anandare/source/repos/applications.manufacturing.ate-test.torch.networking.wlw.class.wlw/Modules"
-    mp = MtplParser(modulePath,'SIO_SERDES')
-    mp.rule_file_gen(output_path="C:/temp/rule_file")
+    modulePath = "C:/Users/anandare/Downloads/"
+    mp = MtplParser(modulePath,'PTH_DLVR_CXX')
+    mp.rule_file_gen(output_path="C:/temp/rule_file3")
     
     # mp.cmem_to_ctvdecoder()
     # mp = MtplParser()
