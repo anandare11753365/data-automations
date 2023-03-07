@@ -54,7 +54,7 @@ def recipe_processor():
                     # print(fd_template)
                     fd_out_wr.write(fd_template+'\n')
                     fd_cnt+=1
-        elif file.endswith('fdmem'):
+        elif file.endswith('fimem'):
             fi = zip.open(file)
             fi_content = fi.readlines()
             fi_cnt=0
