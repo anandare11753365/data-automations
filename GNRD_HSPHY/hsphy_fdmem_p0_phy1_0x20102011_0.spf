@@ -1,3 +1,4 @@
+pass itpp "compress: start;";
 focus_tap PI5_0_PI5_HSPHY_STAP_PHY1;
 
 
@@ -18431,3 +18432,4 @@ set REG_ACC->addr = 'h60007ffc;
 set REG_ACC->wr_data = 'h00000000;
 flush;
 cycle 20;
+pass itpp "compress: stop;";
