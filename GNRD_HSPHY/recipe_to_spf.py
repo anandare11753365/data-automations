@@ -68,21 +68,34 @@ focus_tap PI5_0_PI5_HSPHY_STAP_PHY0, PI5_0_PI5_HSPHY_STAP_PHY1, PI5_1_PI5_HSPHY_
     # headers += close_head
     spf_template = """
 
-    label "WR_%sMEM_%s";
-    set REG_ACC->req_valid = 'h1;
-    set REG_ACC->rd1_wr0 = 'h0;
-    set REG_ACC->addr = 'h%s;
-    set REG_ACC->wr_data = 'h%s;
-    flush;
+label "WR_%sMEM_%s";
+set REG_ACC->req_valid = 'h1;
+set REG_ACC->rd1_wr0 = 'h0;
+set REG_ACC->addr = 'h%s;
+set REG_ACC->wr_data = 'h%s;
+flush;
+cycle 20;"""
+    for tap in tap_list:
+        if "PI5_0" in tap:
+            port = "p0"
+        elif "PI5_1" in tap:
+            port = "p1"        
+        elif "PI5_2" in tap:
+            port = "p2"        
+        else :
+            port = "na"  
 
-    cycle 20;"""
+        if "PHY0" in tap:
+            phy = "phy0"
+        if "PHY1" in tap:
+            phy = "phy1"      
+        d = 0
+        while os.path.exists(os.path.join(os.path.dirname(file_path),"hsphy_fdmem_%s_%s_%s_%s.spf"%(port,phy,ver_name,d))):
+            d += 1
+        i = 0
+        while os.path.exists(os.path.join(os.path.dirname(file_path),"hsphy_fimem_%s_%s_%s_%s.spf"%(port,phy,ver_name,i))):
+            i += 1
 
-    d = 0
-    while os.path.exists(os.path.join(os.path.dirname(file_path),"hsphy_fdmem_%s_%s.spf"%(ver_name,d))):
-        d += 1
-    i = 0
-    while os.path.exists(os.path.join(os.path.dirname(file_path),"hsphy_fimem_%s_%s.spf"%(ver_name,i))):
-        i += 1
     a = 0
     while os.path.exists(os.path.join(os.path.dirname(file_path),"hsphy_fmem_%s_%s.spf"%(ver_name,a))):
         a += 1
@@ -124,16 +137,35 @@ focus_tap PI5_0_PI5_HSPHY_STAP_PHY0, PI5_0_PI5_HSPHY_STAP_PHY1, PI5_1_PI5_HSPHY_
                     fad_out_wr.write(fd_template+'\n')
                     fd_cnt+=1
             for tap in tap_list:
-                fa_cnt=0
+                if "PI5_0" in tap:
+                    port = "p0"
+                elif "PI5_1" in tap:
+                    port = "p1"        
+                elif "PI5_2" in tap:
+                    port = "p2"        
+                else :
+                    port = "na"  
+
+                if "PHY0" in tap:
+                    phy = "phy0"
+                if "PHY1" in tap:
+                    phy = "phy1"
+                fd_cnt=0
+
+                fd_out = os.path.join(os.path.dirname(file_path),"hsphy_fdmem_%s_%s_%s_%s.spf"%(port,phy,ver_name,d))
+                fd_out_wr = open(fd_out, 'w')
+                fd_out_wr.write("focus_tap %s;\n"%tap)
+                
+                fa_out_wr.write("focus_tap %s;\n"%tap)
                 for fd_lines in fd_content:
                     fd_match = re.search("([0-9,a-f]*)\s.*?array.*?\((.*?)\)",fd_lines.decode('utf-8'))
                     if fd_match:
                         data,addrs = fd_match.group(1),fd_match.group(2)
                         fd_template = spf_template%("FD",fd_cnt,addrs.lower().replace('0x',''),data)
-                        # fd_out_wr.write(fd_template+'\n')
-                        fa_out_wr.write("focus_tap %s;\n"%tap)
                         fa_out_wr.write(fd_template+'\n')
-                        fa_cnt+=1
+                        fd_out_wr.write(fd_template+'\n')
+                        fd_cnt+=1
+            fd_out_wr.close()
         elif file.endswith('fimem'):
             fi = zip.open(file)
             fi_content = fi.readlines()
@@ -148,15 +180,34 @@ focus_tap PI5_0_PI5_HSPHY_STAP_PHY0, PI5_0_PI5_HSPHY_STAP_PHY1, PI5_1_PI5_HSPHY_
                     fad_out_wr.write(fi_template+'\n')
                     fi_cnt+=1 
             for tap in tap_list:
-                fa_cnt=0
+                if "PI5_0" in tap:
+                    port = "p0"
+                elif "PI5_1" in tap:
+                    port = "p1"        
+                elif "PI5_2" in tap:
+                    port = "p2"        
+                else :
+                    port = "na"  
+
+                if "PHY0" in tap:
+                    phy = "phy0"
+                if "PHY1" in tap:
+                    phy = "phy1"
+                fi_cnt=0
+
+                fi_out = os.path.join(os.path.dirname(file_path),"hsphy_fimem_%s_%s_%s_%s.spf"%(port,phy,ver_name,d))
+                fi_out_wr = open(fi_out, 'w')
+                fi_out_wr.write("focus_tap %s;\n"%tap)
+
+                fa_out_wr.write("focus_tap %s;\n"%tap)
                 for fi_lines in fi_content:
                     fi_match = re.search("([0-9,a-f]*)\s.*?array.*?\((.*?)\)",fi_lines.decode('utf-8'))
                     if fi_match:
                         data,addrs = fi_match.group(1),fi_match.group(2)
                         fi_template = spf_template%("FI",fi_cnt,addrs.lower().replace('0x',''),data)
-                        fa_out_wr.write("focus_tap %s;\n"%tap)
                         fa_out_wr.write(fi_template+'\n')
-                        fa_cnt+=1
+                        fi_out_wr.write(fi_template+'\n')
+                        fi_cnt+=1
         else:
             pass
 
