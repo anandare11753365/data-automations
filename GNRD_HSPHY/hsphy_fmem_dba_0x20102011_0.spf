@@ -1,3 +1,4 @@
+pass itpp "compress: start;";
 focus_tap GLUE_PI5_0_PI5_HSPHY_STAP_PHY0;
 label "SET_DBA_for_PI5_0_PI5_HSPHY_STAP_PHY0";
 set CLTAP_PI5_0_PI5_HSPHY_STAP_PHY0CFG->DYNAMIC_WR_EN= 'h1;
@@ -73765,3 +73766,4 @@ set REG_ACC->addr = 'h6000dffc;
 set REG_ACC->wr_data = 'h00000000;
 flush;
 cycle 20;
+pass itpp "compress: stop;";
