@@ -1056,14 +1056,29 @@ class MtplParser:
             if len(ituff_value_list) > 1:
                 cntx=0
                 smallest_element = min(ituff_value_list, key=len)
+                # if "53p12G_Q3_L3" in smallest_element:
+                    # print("53p12G_Q3_L3")
+                    # print(ituff_value_list)
                 for x in range(len(smallest_element)):
                     cnty=0
+                    # print(smallest_element[x])
                     for y in range(len(ituff_value_list)):
                         if smallest_element[x] == ituff_value_list[y][x]:
                             cnty+=1
+                            # print("\t",ituff_value_list[y][x],cnty)
                     if cnty == len(ituff_value_list):
                         cntx+=1
-                ituff_value_list = [x[cntx:] for x in ituff_value_list]
+                        # print(cntx)
+                    else:
+                        # print('DONEEEE')
+                        break
+
+                allsame = list(set(ituff_value_list))
+                # print([x[cntx:] for x in ituff_value_list])
+                if len(allsame)==1:
+                    ituff_value_list = [ituff_value_list[0] for x in ituff_value_list]
+                else:
+                    ituff_value_list = [x[cntx:] for x in ituff_value_list]
             # print('after',ituff_value_list)
             return [delimiter,tname.upper(),ituff_value_list]
 
@@ -1138,9 +1153,9 @@ class MtplParser:
     def size(self,from_,to_):
         return to_-from_+1
 if __name__ == "__main__":
-    modulePath = "C:/Users/anandare/Downloads/"
-    mp = MtplParser(modulePath,'PTH_DLVR_CXX')
-    mp.rule_file_gen(output_path="C:/temp/rule_file3")
+    modulePath = "C:/Users/anandare/source/repos/applications.manufacturing.ate-test.torch.server.grr.class.grr-class/Modules"
+    mp = MtplParser(modulePath,'SIO_SERDES')
+    mp.rule_file_gen(output_path="C:/temp/rules_grr2")
     
     # mp.cmem_to_ctvdecoder()
     # mp = MtplParser()

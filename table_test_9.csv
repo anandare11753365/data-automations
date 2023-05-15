@@ -1,0 +1,8 @@
+,0,1,2,3,4,5,6,7,8,9,10
+0,Admin. Group,NO_EDIT,NO_EDIT,NO_EDIT,NO_EDIT,NO_EDIT,NO_EDIT,NO_EDIT,NO_EDIT,NO_EDIT,NO_EDIT
+1,Endianness,little,little,little,little,little,little,little,little,little,little
+2,Physical Interface Width (bits),32,32,32,32,32,32,32,32,32,32
+3,Description,ICF SERDES BLOCK,ICF SERDES BLOCK,ICF SERDES BLOCK,ICF SERDES BLOCK,ICF SERDES BLOCK,ICF SERDES BLOCK,ICF SERDES BLOCK,ICF SERDES BLOCK,ICF SERDES BLOCK,ICF SERDES BLOCK
+4,Constraints,Delivered from ICF. don't changed manually.,Delivered from ICF. don't changed manually.,Delivered from ICF. don't changed manually.,Delivered from ICF. don't changed manually.,Delivered from ICF. don't changed manually.,Delivered from ICF. don't changed manually.,Delivered from ICF. don't changed manually.,Delivered from ICF. don't changed manually.,Delivered from ICF. don't changed manually.,Delivered from ICF. don't changed manually.
+5,IndirectReg,,,,,,,,,,
+6,IndirectIndexReg,,,,,,,,,,

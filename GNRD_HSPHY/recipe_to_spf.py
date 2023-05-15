@@ -75,6 +75,16 @@ set REG_ACC->addr = 'h%s;
 set REG_ACC->wr_data = 'h%s;
 flush;
 cycle 20;"""
+    spf_template = """
+
+label "WR_%sMEM_%s";
+set MEMREG->MEM_COMMAND_STATUS = 'h2;
+set MEMREG->MEM_VALUE = 'h%s;
+set MEMREG->MEM_ADDR = 'h%s;
+flush;
+
+cycle 100;"""
+
     for tap in tap_list:
         if "PI5_0" in tap:
             port = "p0"
@@ -133,7 +143,7 @@ cycle 20;"""
                 fd_match = re.search("([0-9,a-f]*)\s.*?array.*?\((.*?)\)",fd_lines.decode('utf-8'))
                 if fd_match:
                     data,addrs = fd_match.group(1),fd_match.group(2)
-                    fd_template = spf_template%("FD",fd_cnt,addrs.lower().replace('0x',''),data)
+                    fd_template = spf_template%("FD",fd_cnt,data,addrs.lower().replace('0x',''))
                     # fd_out_wr.write(fd_template+'\n')
                     fad_out_wr.write(fd_template+'\n')
                     fd_cnt+=1
@@ -165,7 +175,7 @@ cycle 20;"""
                     fd_match = re.search("([0-9,a-f]*)\s.*?array.*?\((.*?)\)",fd_lines.decode('utf-8'))
                     if fd_match:
                         data,addrs = fd_match.group(1),fd_match.group(2)
-                        fd_template = spf_template%("FD",fd_cnt,addrs.lower().replace('0x',''),data)
+                        fd_template = spf_template%("FD",fd_cnt,data,addrs.lower().replace('0x',''))
                         fa_out_wr.write(fd_template+'\n')
                         fd_out_wr.write(fd_template+'\n')
                         fd_cnt+=1
@@ -179,7 +189,7 @@ cycle 20;"""
                 fi_match = re.search("([0-9,a-f]*)\s.*?array.*?\((.*?)\)",fi_lines.decode('utf-8'))
                 if fi_match:
                     data,addrs = fi_match.group(1),fi_match.group(2)
-                    fi_template = spf_template%("FI",fi_cnt,addrs.lower().replace('0x',''),data)
+                    fi_template = spf_template%("FI",fi_cnt,data,addrs.lower().replace('0x',''))
                     # print(fi_template)
                     # fi_out_wr.write(fi_template+'\n')
                     fad_out_wr.write(fi_template+'\n')
@@ -210,7 +220,7 @@ cycle 20;"""
                     fi_match = re.search("([0-9,a-f]*)\s.*?array.*?\((.*?)\)",fi_lines.decode('utf-8'))
                     if fi_match:
                         data,addrs = fi_match.group(1),fi_match.group(2)
-                        fi_template = spf_template%("FI",fi_cnt,addrs.lower().replace('0x',''),data)
+                        fi_template = spf_template%("FI",fi_cnt,data,addrs.lower().replace('0x',''))
                         fa_out_wr.write(fi_template+'\n')
                         fi_out_wr.write(fi_template+'\n')
                         fi_cnt+=1

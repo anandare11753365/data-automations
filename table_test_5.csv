@@ -1,0 +1,6 @@
+,0,1,2,3,4,5
+0,,Location,Reset Value,Access Right,Description,RDL properties
+1,bti_div,0..6,0x36,Read/Write,BTI clock divider. Divide ratio = 2^bti_div,
+2,bti_div_rst,7,0x00,Read/Write,BTI clock divider reset.,
+3,bti_en,8..19,0x0fff,Read/Write,BTI clock enable,
+4,bti_static_val,20..31,0x00,Read/Write,"BTI clock static mask, when BTI clock disable 0 - cmn lane 1 - synthlcslow 2 - Reserved 3 - synthlcfast 4 - Rx Lane 0 5 - Rx Lane 1 6 - Rx Lane 2 7 - Rx Lane 3 8 - Tx Lane 0 9 - Tx Lane 1 10 - Tx Lane 2 11 - Tx Lane 3",
