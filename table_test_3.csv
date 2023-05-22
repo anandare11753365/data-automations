@@ -1,0 +1,12 @@
+,0,1,2,3,4,5,6,7,8,9,10
+0,Short Description  Width  32  Address  0x40304 (Offset: 0004)  Reset Value  0xfff36  Access Right  Read/Write  Description  Constraints  HDL Path  RDL properties  Security Policy  NON_SECURE,,,,,,,,,,
+1,Short Description,,,,,,,,,,
+2,Width,32,32,32,32,32,32,32,32,32,32
+3,Address,0x40304 (Offset: 0004),0x40304 (Offset: 0004),0x40304 (Offset: 0004),0x40304 (Offset: 0004),0x40304 (Offset: 0004),0x40304 (Offset: 0004),0x40304 (Offset: 0004),0x40304 (Offset: 0004),0x40304 (Offset: 0004),0x40304 (Offset: 0004)
+4,Reset Value,0xfff36,0xfff36,0xfff36,0xfff36,0xfff36,0xfff36,0xfff36,0xfff36,0xfff36,0xfff36
+5,Access Right,Read/Write,Read/Write,Read/Write,Read/Write,Read/Write,Read/Write,Read/Write,Read/Write,Read/Write,Read/Write
+6,Description,,,,,,,,,,
+7,Constraints,,,,,,,,,,
+8,HDL Path,,,,,,,,,,
+9,RDL properties,,,,,,,,,,
+10,Security Policy,NON_SECURE,NON_SECURE,NON_SECURE,NON_SECURE,NON_SECURE,NON_SECURE,NON_SECURE,NON_SECURE,NON_SECURE,NON_SECURE

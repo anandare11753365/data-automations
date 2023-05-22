@@ -1,0 +1,11 @@
+,0,1,2,3,4,5,6,7,8,9,10
+0,Short Description,,,,,,,,,,
+1,Width,32,32,32,32,32,32,32,32,32,32
+2,Address,0x40304 (Offset: 0004),0x40304 (Offset: 0004),0x40304 (Offset: 0004),0x40304 (Offset: 0004),0x40304 (Offset: 0004),0x40304 (Offset: 0004),0x40304 (Offset: 0004),0x40304 (Offset: 0004),0x40304 (Offset: 0004),0x40304 (Offset: 0004)
+3,Reset Value,0xfff36,0xfff36,0xfff36,0xfff36,0xfff36,0xfff36,0xfff36,0xfff36,0xfff36,0xfff36
+4,Access Right,Read/Write,Read/Write,Read/Write,Read/Write,Read/Write,Read/Write,Read/Write,Read/Write,Read/Write,Read/Write
+5,Description,,,,,,,,,,
+6,Constraints,,,,,,,,,,
+7,HDL Path,,,,,,,,,,
+8,RDL properties,,,,,,,,,,
+9,Security Policy,NON_SECURE,NON_SECURE,NON_SECURE,NON_SECURE,NON_SECURE,NON_SECURE,NON_SECURE,NON_SECURE,NON_SECURE,NON_SECURE
