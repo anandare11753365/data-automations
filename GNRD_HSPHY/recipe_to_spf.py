@@ -1,4 +1,4 @@
-
+# test
 import zipfile
 import re
 import os
@@ -56,7 +56,20 @@ focus_tap PI5_0_PI5_HSPHY_STAP_PHY0, PI5_0_PI5_HSPHY_STAP_PHY1, PI5_1_PI5_HSPHY_
 
     tap_list = ['PI5_0_PI5_HSPHY_STAP_PHY0', 'PI5_0_PI5_HSPHY_STAP_PHY1', 'PI5_1_PI5_HSPHY_STAP_PHY0', 'PI5_1_PI5_HSPHY_STAP_PHY1', 'PI5_2_PI5_HSPHY_STAP_PHY0', 'PI5_2_PI5_HSPHY_STAP_PHY1']
     
+    dram_header = """\nlabel "REG_ACC_WRITE_PMA_UC_PMA_UC_reg_4_30_30_cfg_uc_data_ram_sel_0x1";
+set MEMREG->MEM_COMMAND_STATUS = 'h2;
+set MEMREG->MEM_VALUE = 'h40000000;
+set MEMREG->MEM_ADDR = 'h0010;
+flush;
 
+cycle 100;"""
+    iram_header = """\nlabel "REG_ACC_WRITE_PMA_UC_PMA_UC_reg_4_30_30_cfg_uc_data_ram_sel_0x0";
+set MEMREG->MEM_COMMAND_STATUS = 'h2;
+set MEMREG->MEM_VALUE = 'h00000000;
+set MEMREG->MEM_ADDR = 'h0010;
+flush;
+
+cycle 100;"""
     # if "," in tap:
     #     tap_list = tap.split(",")
     # else:
@@ -80,7 +93,7 @@ cycle 20;"""
 label "WR_%sMEM_%s";
 set MEMREG->MEM_COMMAND_STATUS = 'h2;
 set MEMREG->MEM_VALUE = 'h%s;
-set MEMREG->MEM_ADDR = 'h%s;
+set MEMREG->MEM_ADDR = 'h14;
 flush;
 
 cycle 100;"""
@@ -131,6 +144,7 @@ cycle 100;"""
     fad_out_wr.write("pass itpp \"compress: start;\";\n")
     fad_out_wr.write("%s\n"%header)
 
+
     recipe_raw_files = zip.namelist()
 
     for file in recipe_raw_files:
@@ -139,11 +153,12 @@ cycle 100;"""
             fd = zip.open(file)
             fd_content = fd.readlines()
             fd_cnt=0
+            fad_out_wr.write("%s\n"%dram_header)
             for fd_lines in fd_content:
                 fd_match = re.search("([0-9,a-f]*)\s.*?array.*?\((.*?)\)",fd_lines.decode('utf-8'))
                 if fd_match:
                     data,addrs = fd_match.group(1),fd_match.group(2)
-                    fd_template = spf_template%("FD",fd_cnt,data,addrs.lower().replace('0x',''))
+                    fd_template = spf_template%("FD",fd_cnt,data)
                     # fd_out_wr.write(fd_template+'\n')
                     fad_out_wr.write(fd_template+'\n')
                     fd_cnt+=1
@@ -167,15 +182,15 @@ cycle 100;"""
                 fd_out_wr = open(fd_out, 'w')
                 fd_out_wr.write("pass itpp \"compress: start;\";\n")
                 fd_out_wr.write("focus_tap %s;\n"%tap)
-                
+                fd_out_wr.write("%s\n"%dram_header)
                 fa_out_wr.write("pass itpp \"compress: start;\";\n")
                 fa_out_wr.write("focus_tap %s;\n"%tap)
-                
+                fa_out_wr.write("%s\n"%dram_header)
                 for fd_lines in fd_content:
                     fd_match = re.search("([0-9,a-f]*)\s.*?array.*?\((.*?)\)",fd_lines.decode('utf-8'))
                     if fd_match:
                         data,addrs = fd_match.group(1),fd_match.group(2)
-                        fd_template = spf_template%("FD",fd_cnt,data,addrs.lower().replace('0x',''))
+                        fd_template = spf_template%("FD",fd_cnt,data)
                         fa_out_wr.write(fd_template+'\n')
                         fd_out_wr.write(fd_template+'\n')
                         fd_cnt+=1
@@ -185,11 +200,12 @@ cycle 100;"""
             fi = zip.open(file)
             fi_content = fi.readlines()
             fi_cnt=0
+            fad_out_wr.write("%s\n"%iram_header)
             for fi_lines in fi_content:
                 fi_match = re.search("([0-9,a-f]*)\s.*?array.*?\((.*?)\)",fi_lines.decode('utf-8'))
                 if fi_match:
                     data,addrs = fi_match.group(1),fi_match.group(2)
-                    fi_template = spf_template%("FI",fi_cnt,data,addrs.lower().replace('0x',''))
+                    fi_template = spf_template%("FI",fi_cnt,data)
                     # print(fi_template)
                     # fi_out_wr.write(fi_template+'\n')
                     fad_out_wr.write(fi_template+'\n')
@@ -214,13 +230,14 @@ cycle 100;"""
                 fi_out_wr = open(fi_out, 'w')
                 fi_out_wr.write("pass itpp \"compress: start;\";\n")
                 fi_out_wr.write("focus_tap %s;\n"%tap)
-                
+                fi_out_wr.write("%s\n"%iram_header)
                 fa_out_wr.write("focus_tap %s;\n"%tap)
+                fa_out_wr.write("%s\n"%iram_header)
                 for fi_lines in fi_content:
                     fi_match = re.search("([0-9,a-f]*)\s.*?array.*?\((.*?)\)",fi_lines.decode('utf-8'))
                     if fi_match:
                         data,addrs = fi_match.group(1),fi_match.group(2)
-                        fi_template = spf_template%("FI",fi_cnt,data,addrs.lower().replace('0x',''))
+                        fi_template = spf_template%("FI",fi_cnt,data)
                         fa_out_wr.write(fi_template+'\n')
                         fi_out_wr.write(fi_template+'\n')
                         fi_cnt+=1
